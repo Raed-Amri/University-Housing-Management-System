@@ -1,58 +1,80 @@
-🏫 University Housing Management System
+# ✈️ University Housing Management System
 
-This project is a Spring Boot application for managing university housing, including universities, foyers, blocs, rooms, students, and reservations. It provides a backend system to handle student housing assignments and reservations efficiently.
+---
 
-📌 Features
+## 📌 Overview
+This is a **Spring Boot-based application** designed to streamline the management of university housing.  
+The system models core entities such as **universities, foyers, blocs, rooms, students, and reservations**, utilizing **Spring Data JPA** for robust data persistence.  
 
-Université Management:
-Create and manage universities with their names and addresses.
+It supports **CRUD operations** across these entities and defines relationships, such as **foyers assigned to universities** and **students linked to reservations**, to ensure efficient housing assignments.
 
-Foyer Management:
-Assign one foyer to each university with a defined capacity.
+> The project is structured as a **backend application**, with potential for extension into a **web API** or full **MVC application** to enhance usability.
 
-Bloc Management:
-Manage blocs within a foyer, each with its own capacity.
+---
 
-Chambre Management:
-Define rooms with numbers and types:
+## 🎯 Project Goal
+The primary objective is to simulate a real-world university housing management system that enables:  
+- Efficient management of **universities, foyers, blocs, rooms, and student reservations**.  
+- Tracking of **student details and reservation statuses**.  
+- Practical application of **Spring Data JPA relationships, CRUD operations, and database management** in a Java environment.  
+- Serving as a foundation for **scaling into a comprehensive web-based housing service**.
 
-SIMPLE
+---
 
-DOUBLE
+## 🚀 Features
+- **University Management:** Create and manage universities with names and addresses.  
+- **Foyer Management:** Assign a single foyer to each university with a defined capacity.  
+- **Bloc Management:** Administer blocs within a foyer, each with its own capacity.  
+- **Room Management:** Define rooms by number and type (**SIMPLE, DOUBLE, TRIPLE**).  
+- **Student Management:** Handle student information including name, CIN, school, and date of birth.  
+- **Reservation System:** Facilitate room reservations for an academic year, with validation options.
 
-TRIPLE
+---
 
-Étudiant Management:
-Manage student information including name, CIN, school, and date of birth.
+## 🛠️ Tech Stack
+- **Language:** Java 17+  
+- **Framework:** Spring Boot (Data JPA, Web, Validation)  
+- **ORM:** Hibernate  
+- **Database:** MySQL / PostgreSQL (configurable)  
+- **Dependencies:**  
+  - Spring Data JPA  
+  - Hibernate  
+  - Lombok (reduces boilerplate code)  
+  - Maven (dependency management)
 
-Réservation System:
-Students can reserve rooms for an academic year.
-Each reservation can be validated or not.
+---
 
-📊 Class Diagram
+## 📁 Project Structure
+The application is organized into the following core entities:
 
-The system is based on the following class structure:
+- **Université:** idUniversite (long), nomUniversite (String), adresse (String).  
+- **Foyer:** idFoyer (long), nomFoyer (String), capaciteFoyer (long), linked to one university.  
+- **Bloc:** idBloc (long), nomBloc (String), capaciteBloc (long), associated with one foyer.  
+- **Chambre:** idChambre (long), numeroChambre (long), typeC (TypeChambre enum: SIMPLE, DOUBLE, TRIPLE).  
+- **Réservation:** idReservation (String), anneeUniversitaire (Date), estValide (boolean), linked to one room and student.  
+- **Étudiant:** idEtudiant (long), nomEt (String), prenomEt (String), cin (long), ecole (String), dateNaissance (Date).
 
+---
+
+## 📊 Class Diagram
+The system’s architecture is based on the following relationships:
 Université → 1 Foyer
-
 Foyer → * Blocs
-
 Bloc → * Chambres
-
 Chambre → * Réservations
-
 Étudiant → * Réservations
 
-🛠️ Technologies Used
 
-Java 17+
+---
 
-Spring Boot (Data JPA, Web, Validation)
+## ⚙️ Getting Started
 
-Hibernate ORM
+### Prerequisites
+- **Java 17+ SDK** or later  
+- **Maven** (for dependency management)  
+- **IDE:** IntelliJ IDEA, Eclipse, or VS Code with Java extensions  
+- **Database:** MySQL or PostgreSQL (configured as needed)
 
-MySQL / PostgreSQL (configurable)
 
-Lombok for reducing boilerplate code
 
-Maven for dependency management
+
