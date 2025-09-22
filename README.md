@@ -57,12 +57,12 @@ The application is organized into the following core entities:
 ---
 
 ## 📊 Class Diagram
-The system’s architecture is based on the following relationships:
-Université → 1 Foyer
-Foyer → * Blocs
-Bloc → * Chambres
-Chambre → * Réservations
-Étudiant → * Réservations
+- The system’s architecture is based on the following relationships:
+- Université → 1 Foyer
+- Foyer → * Blocs
+- Bloc → * Chambres
+- Chambre → * Réservations
+- Étudiant → * Réservations
 
 
 ---
